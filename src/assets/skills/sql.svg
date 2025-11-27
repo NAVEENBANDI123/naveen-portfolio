@@ -1,0 +1,14 @@
+<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="40" cy="40" r="38" fill="#0B0F1A" stroke="#4F8CFF" stroke-width="2"></circle>
+
+  <!-- Database cylinder -->
+  <ellipse cx="40" cy="26" rx="18" ry="8" fill="#111827" stroke="#4F8CFF" stroke-width="1.5"></ellipse>
+  <path d="M22 26V48C22 52 28 56 40 56C52 56 58 52 58 48V26" fill="#0F172A" stroke="#4F8CFF" stroke-width="1.5"></path>
+  <ellipse cx="40" cy="48" rx="18" ry="8" fill="#111827" stroke="#4F8CFF" stroke-width="1.5"></ellipse>
+
+  <!-- SQL text -->
+  <text x="40" y="34" text-anchor="middle" fill="#E5E7EB" font-size="10" font-family="Segoe UI, system-ui, -apple-system, BlinkMacSystemFont" font-weight="600">
+    SQL
+  </text>
+</svg>

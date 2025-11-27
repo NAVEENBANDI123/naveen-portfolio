@@ -1,0 +1,522 @@
+/* ===============================
+   GLOBAL THEME VARIABLES
+================================ */
+:root {
+  --bg-primary: #0b0f1a;
+  --bg-secondary: #121725;
+  --bg-card: #161b2f;
+  --accent: #4f8cff;
+  --accent-glow: rgba(79, 140, 255, 0.4);
+  --text-main: #e5e7eb;
+--text-muted: #9ca3af; /* readable cool gray */
+  --border-subtle: rgba(255, 255, 255, 0.08);
+}
+p, li {
+  color: var(--text-main);
+}
+#experience ul li,
+#projects ul li {
+  color: #e5e7eb;
+  line-height: 1.7;
+}
+
+#experience .text-muted,
+#projects .text-muted {
+  color: #cbd5f5 !important;
+}
+h1, h2, h3, h4, h5 {
+  color: #f8fafc;
+}
+
+strong {
+  color: #ffffff;
+}
+
+/* ===============================
+   RESET & BASE
+================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: radial-gradient(circle at top, #141a33 0%, var(--bg-primary) 45%, #05070d 100%);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+/* ===============================
+   GENERAL UTILITIES
+================================ */
+.section-padding {
+  padding: 90px 0;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 3px;
+  margin-top: 12px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+}
+
+.section-subtitle {
+  max-width: 600px;
+  color: var(--text-muted);
+  margin-top: 10px;
+}
+
+/* ===============================
+   NAVBAR
+================================ */
+.navbar {
+  background: rgba(10, 14, 30, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.navbar-brand {
+  letter-spacing: 0.2em;
+  font-size: 0.95rem;
+}
+
+.nav-link {
+    color: #e5e7eb !important;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--accent) !important;
+}
+
+/* ===============================
+   HERO SECTION
+================================ */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 120px;
+}
+
+.hero-title {
+  font-size: clamp(2.4rem, 5vw, 3.2rem);
+  font-weight: 800;
+}
+
+.hero-title span {
+  background: linear-gradient(90deg, var(--accent), #9bbcff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero p {
+  color: var(--text-muted);
+}
+
+.hero .btn {
+  border-radius: 999px;
+  padding: 10px 22px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+/* ===============================
+   ABOUT
+================================ */
+#about p {
+  max-width: 800px;
+  color: #d1d5db;
+}
+
+/* ===============================
+   SKILLS
+================================ */
+/* #skills ul { 
+  list-style: none;
+  padding-left: 0;
+}
+
+#skills li {
+  padding-left: 22px;
+  margin-bottom: 8px;
+  position: relative;
+}
+
+#skills li::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}*/
+/* ===============================
+   SKILLS – FAANG STYLE PILLS
+================================ */
+
+.skill-box {
+  padding: 26px;
+  border-radius: 18px;
+  border: 1px solid rgba(139, 92, 246, 0.7);
+  box-shadow: 0 0 25px rgba(139, 92, 246, 0.25);
+}
+
+.skill-box-title {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 22px;
+  color: #e5e7eb;
+}
+
+.skill-pill-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+}
+
+.skill-pill {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #e5e7eb;
+  transition: all 0.25s ease;
+}
+
+.skill-pill img {
+  width: 35px;
+  height: 35px;
+  object-fit: contain;
+}
+
+.skill-pill:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 12px rgba(139, 92, 246, 0.6);
+  border-color: rgba(139, 92, 246, 0.9);
+}
+
+/* ===============================
+   PROJECTS
+================================ */
+.project-card {
+  background: linear-gradient(145deg, var(--bg-card), var(--bg-secondary));
+  border-radius: 16px;
+  border: 1px solid var(--border-subtle);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 0 1px var(--accent-glow), 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.project-card small {
+  color: var(--accent);
+}
+
+/* ===============================
+   EXPERIENCE / EDUCATION
+================================ */
+#experience p {
+  color: #d1d5db;
+}
+
+/* ===============================
+   CONTACT
+================================ */
+form .form-control {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-main);
+  border-radius: 12px;
+}
+
+form .form-control:focus {
+  background: var(--bg-secondary);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent-glow);
+  color: var(--text-main);
+}
+
+form button {
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+/* ===============================
+   CONTACT – BOOTSTRAP ICONS
+================================ */
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--text-main);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 12px 16px;
+  border-radius: 14px;
+  transition: all 0.25s ease;
+}
+
+.contact-item i {
+  font-size: 1.3rem;
+  color: var(--accent);
+}
+
+.contact-item span {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.contact-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 16px var(--accent-glow);
+  border-color: var(--accent);
+  color: var(--text-main);
+}
+
+/* ===============================
+   RESUME
+================================ */
+#resume {
+  background: radial-gradient(circle at center, #1a2040 0%, var(--bg-primary) 60%);
+}
+
+/* ===============================
+   FOOTER
+================================ */
+footer {
+  border-top: 1px solid var(--border-subtle);
+  font-size: 0.8rem;
+}
+
+/* ===============================
+   ANIMATIONS
+================================ */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section-padding {
+  animation: fadeUp 0.8s ease forwards;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 70px 0;
+  }
+
+  .hero {
+    text-align: center;
+  }
+}
+/* ===============================
+   HIGH-END UI POLISH (PHASE 1)
+================================ */
+
+/* Glass cards */
+.glass {
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.10),
+    rgba(255, 255, 255, 0.04)
+  );
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.5),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+
+/* Section divider accent */
+.section-divider {
+  width: 100%;
+  height: 1px;
+  margin: 80px 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--accent),
+    transparent
+  );
+  opacity: 0.35;
+}
+
+.gradient-text {
+  background: linear-gradient(
+    90deg,
+    var(--accent),
+    #8bb2ff,
+    #dbeafe
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+
+/* Premium hover lift */
+.lift {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.lift:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow:
+    0 30px 60px rgba(0, 0, 0, 0.45),
+    0 0 0 1px var(--accent-glow);
+}
+
+/* Neon underline */
+.neon-underline {
+  position: relative;
+}
+
+.neon-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 40%;
+  height: 2px;
+  background: var(--accent);
+  box-shadow: 0 0 8px var(--accent-glow);
+}
+
+/* Hero aura */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: -200px;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(79,140,255,0.18), transparent 45%),
+    radial-gradient(circle at 80% 60%, rgba(139,178,255,0.15), transparent 45%);
+}
+
+/* ===============================
+   SKILLS – ICON GRID + ANIMATION
+================================ */
+
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 12px;
+}
+
+.skill-item {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.skill-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 0 1px var(--accent-glow);
+}
+
+/* Reveal animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(25px);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* ===============================
+   SKILL POPUP MODAL
+================================ */
+
+.skill-pill.clickable {
+  cursor: pointer;
+}
+
+.skill-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.skill-modal {
+  padding: 30px;
+  border-radius: 18px;
+  text-align: center;
+  max-width: 360px;
+  animation: fadeUp 0.35s ease;
+}
+
+.skill-modal img {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 12px;
+}
+
+.skill-modal h4 {
+  margin-bottom: 8px;
+}
+
+.skill-modal p {
+  color: #e5e7eb;
+}
+
+.modal-close {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  background: none;
+  border: none;
+  color: #e5e7eb;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
