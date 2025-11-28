@@ -148,6 +148,87 @@ body {
   max-width: 800px;
   color: #d1d5db;
 }
+/* Section fade */
+.fade-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.fade-section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Title animation */
+.slide-down {
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: slideDown 0.8s ease forwards;
+}
+
+@keyframes slideDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Subtitle delay */
+.fade-in-delay {
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+  animation-delay: 0.4s;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* 🔥 Highlight pills container */
+.about-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* Highlight pill */
+.highlight-pill {
+  background: rgba(13, 110, 253, 0.15);
+  color: #8ab4ff;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(138, 180, 255, 0.3);
+  opacity: 0;
+  transform: translateY(10px);
+  animation: popIn 0.6s ease forwards;
+}
+
+/* Stagger animation */
+.highlight-pill:nth-child(1) { animation-delay: 0.2s; }
+.highlight-pill:nth-child(2) { animation-delay: 0.35s; }
+.highlight-pill:nth-child(3) { animation-delay: 0.5s; }
+.highlight-pill:nth-child(4) { animation-delay: 0.65s; }
+.highlight-pill:nth-child(5) { animation-delay: 0.8s; }
+
+@keyframes popIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hover glow */
+.highlight-pill:hover {
+  box-shadow: 0 0 15px rgba(138, 180, 255, 0.35);
+  cursor: default;
+}
+
 
 /* ===============================
    SKILLS
@@ -239,6 +320,68 @@ body {
 .project-card small {
   color: var(--accent);
 }
+/* Section animation */
+.fade-section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.fade-section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Title animation */
+.slide-down {
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: slideDown 0.8s ease forwards;
+}
+
+@keyframes slideDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Subtitle delay */
+.fade-in-delay {
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+  animation-delay: 0.4s;
+}
+
+/* Card animation */
+.fade-card {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.fade-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hover lift */
+.lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Glass effect (optional) */
+.glass {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 
 /* ===============================
    EXPERIENCE / EDUCATION
@@ -269,6 +412,67 @@ form button {
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
+/* Section fade */
+.fade-section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.fade-section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Slide down title */
+.slide-down {
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: slideDown 0.8s ease forwards;
+}
+
+@keyframes slideDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Delayed headings */
+.fade-in-delay {
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+  animation-delay: 0.4s;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Card animation */
+.fade-card {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.fade-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hover lift */
+.lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+}
+
 /* ===============================
    CONTACT – BOOTSTRAP ICONS
 ================================ */
@@ -309,6 +513,64 @@ form button {
 #resume {
   background: radial-gradient(circle at center, #1a2040 0%, var(--bg-primary) 60%);
 }
+/* Fade + slide animation */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Heading slide */
+.slide-down {
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: slideDown 0.8s ease forwards;
+}
+
+@keyframes slideDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Delayed paragraph */
+.fade-in-delay {
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Button pulse */
+.pulse-btn {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(13, 110, 253, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(13, 110, 253, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(13, 110, 253, 0);
+  }
+}
+
 
 /* ===============================
    FOOTER
