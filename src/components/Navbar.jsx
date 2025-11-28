@@ -2,9 +2,19 @@ function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm">
       <div className="container">
-        <a className="navbar-brand fw-bold" href="#home">
+          <a className="navbar-brand d-flex align-items-center" href="#home">
+            <img
+              src="/favicon-32x32.png"
+              alt="Naveen Bandi Logo"
+              width="32"
+              height="32"
+              className="me-2"
+            />
+          </a>
+        
+         <a className="navbar-brand fw-bold" href="#home">
           Naveen Bandi<span className="text-primary">.</span>
-        </a>
+        </a> 
 
         <button
           className="navbar-toggler"
