@@ -228,6 +228,34 @@ body {
   box-shadow: 0 0 15px rgba(138, 180, 255, 0.35);
   cursor: default;
 }
+/* Profile Photo */
+.about-photo {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Hover Effect */
+.about-photo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+}
+
+/* Fade-in animation */
+.fade-in-image {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.fade-section.show .fade-in-image {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
 
 
 /* ===============================

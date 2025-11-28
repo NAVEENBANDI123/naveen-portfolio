@@ -117,10 +117,7 @@ if (entry.isIntersecting) {
         {/* 🔥 Animated Highlights */}
         <div className="about-highlights mt-4">
           <span className="highlight-pill">Java & Spring Boot</span>
-          {/* <span className="highlight-pill">REST APIs</span>
-          <span className="highlight-pill">Enterprise Healthcare Apps</span>
-          <span className="highlight-pill">IBM Informix</span>
-          <span className="highlight-pill">Agile Team Experience</span> */}
+
         </div>
 
         <p className="mt-4">
