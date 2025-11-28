@@ -10,10 +10,10 @@ function Resume() {
           Download my resume to know more about my experience.
         </p>
         <a
-          href="/resume.pdf"
-          className="btn btn-primary mt-3 pulse-btn"
-          download
-        >
+  href={`${import.meta.env.BASE_URL}resume.pdf`}
+  className="btn btn-primary mt-3 pulse-btn"
+  download
+>
           Download Resume
         </a>
       </div>
