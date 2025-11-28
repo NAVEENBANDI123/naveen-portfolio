@@ -3,7 +3,7 @@ function Navbar() {
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm">
       <div className="container">
         <a className="navbar-brand fw-bold" href="#home">
-          Naveen<span className="text-primary">.</span>
+          Naveen Bandi<span className="text-primary">.</span>
         </a>
 
         <button
