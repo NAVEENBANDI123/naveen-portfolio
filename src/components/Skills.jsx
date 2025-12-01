@@ -1,16 +1,18 @@
 import { useState } from "react";
 
-import javaLogo from "../assets/skills/java.svg";
-import springLogo from "../assets/skills/spring.svg";
+import javaLogo from "../assets/skills/java1.svg";
+import springLogo from "../assets/skills/springboot.svg";
 import htmlLogo from "../assets/skills/html.svg";
 import cssLogo from "../assets/skills/css.svg";
 import jsLogo from "../assets/skills/javascript.svg";
 import sqlLogo from "../assets/skills/sql.svg";
-import gitLogo from "../assets/skills/git.svg";
-import githubLogo from "../assets/skills/github.svg";
-import postmanLogo from "../assets/skills/postman.svg";
-import vscodeLogo from "../assets/skills/vscode.svg";
-import eclipseLogo from "../assets/skills/eclipse.svg";
+import gitLogo from "../assets/skills/git1.svg";
+import githubLogo from "../assets/skills/github1.svg";
+import postmanLogo from "../assets/skills/postman1.svg";
+import vscodeLogo from "../assets/skills/vscode1.svg";
+import eclipseLogo from "../assets/skills/eclipse1.svg";
+import reactLogo from "../assets/skills/react.svg";
+import nodejsLogo from "../assets/skills/nodejs.svg";
 
 function Skills() {
   const [activeSkill, setActiveSkill] = useState(null);
@@ -45,6 +47,13 @@ function Skills() {
               description="JavaScript is used to implement client-side logic and enhance interactivity within web applications."
               onClick={setActiveSkill}
             />
+            <SkillPill
+              logo={reactLogo}
+              name="React.js"
+              experience="Basic"
+              description="I use React.js to build modular UI components, manage component state, and create interactive user interfaces using JavaScript."
+              onClick={setActiveSkill}
+            />
           </SkillBox>
 
           <SkillBox title="Backend">
@@ -58,6 +67,13 @@ function Skills() {
               logo={springLogo}
               name="Spring Boot"
               description="I use Spring Boot to develop RESTful services and backend modules with a focus on clean structure and reliability."
+              onClick={setActiveSkill}
+            />
+            <SkillPill
+              logo={nodejsLogo}
+              name="Node.js"
+              experience="Basic"
+               description="Currently learning Node.js to understand server-side JavaScript concepts and API development fundamentals."
               onClick={setActiveSkill}
             />
             <SkillPill

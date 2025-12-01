@@ -1,16 +1,48 @@
+import { useEffect, useRef } from "react";
+
 function Experience() {
+  const sectionRef = useRef(null);
+  const cardRefs = useRef([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    cardRefs.current.forEach((card) => observer.observe(card));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section id="experience" className="section-padding bg-dark text-light">
+    <section
+      ref={sectionRef}
+      id="experience"
+      className="section-padding bg-dark text-light fade-section"
+    >
       <div className="container">
 
-        <h2 className="section-title gradient-text">Experience & Education</h2>
+        <h2 className="section-title gradient-text slide-down">
+          Experience & Education
+        </h2>
 
         {/* PROFESSIONAL EXPERIENCE */}
         <div className="mt-5">
-          <h4 className="mb-3">Professional Experience</h4>
+          <h4 className="mb-3 fade-in-delay">Professional Experience</h4>
 
-          <div className="glass lift p-4 rounded-4">
-            <h5 className="fw-semibold">Management Trainee – Java Developer</h5>
+          <div
+            className="glass lift p-4 rounded-4 fade-card"
+            ref={(el) => (cardRefs.current[0] = el)}
+          >
+            <h5 className="fw-semibold">Management Trainee – Java</h5>
             <p className="text-muted mb-1">
               CRANE GLOBAL SOLUTIONS LIMITED  
               <br />
@@ -18,48 +50,30 @@ function Experience() {
             </p>
 
             <ul className="mt-3">
-              <li>
-                Working on <strong>Neura 6</strong>, a hospital and medical management web application
-                used for patient records, billing, appointments, and pharmacy workflows.
-              </li>
-              <li>
-                Developing backend modules using <strong>Java, Spring Boot</strong> and front-end features
-                using <strong>HTML, CSS, JavaScript</strong>.
-              </li>
-              <li>
-                Designing and implementing <strong>RESTful APIs</strong> for smooth communication between
-                front-end and backend systems.
-              </li>
-              <li>
-                Performing <strong>unit testing</strong> and debugging to ensure reliability and code quality.
-              </li>
-              <li>
-                Using <strong>Postman</strong> to validate API endpoints and backend responses.
-              </li>
-              <li>
-                Integrating backend features with <strong>IBM Informix</strong> for secure and efficient
-                data handling.
-              </li>
-              <li>
-                Collaborating with cross-functional teams under an <strong>Agile</strong> environment
-                to deliver features and improve system performance.
-              </li>
-              <li>
-                Enhancing UI usability by improving front-end design and responsiveness.
-              </li>
+              <li>Working as a Java developer in an enterprise healthcare domain environment.</li>
+              <li>Developing and maintaining server-side components using <strong>Java and Spring Boot</strong>.</li>
+              <li>Creating and consuming <strong>RESTful APIs</strong>.</li>
+              <li>Integrating backend services with <strong>IBM Informix</strong> databases.</li>
+              <li>Performing <strong>unit testing and debugging</strong> to ensure code quality.</li>
+              {/* <li>Collaborating in an <strong>Agile development environment</strong>.</li> */}
+              <li>Using <strong>Postman</strong> for API testing and validation.</li>
+              <li>Supporting UI enhancements using <strong>HTML, CSS, and JavaScript</strong>.</li>
             </ul>
 
             <p className="text-primary mt-2">
-              Java • Spring Boot • REST APIs • HTML • CSS • JS • IBM Informix • Postman • Agile
+              Java • Spring Boot • REST APIs • HTML • CSS • JavaScript • IBM Informix • Postman 
             </p>
           </div>
         </div>
 
         {/* EDUCATION */}
         <div className="mt-5">
-          <h4 className="mb-3">Education</h4>
+          <h4 className="mb-3 fade-in-delay">Education</h4>
 
-          <div className="glass lift p-4 rounded-4">
+          <div
+            className="glass lift p-4 rounded-4 fade-card"
+            ref={(el) => (cardRefs.current[1] = el)}
+          >
             <h5 className="fw-semibold">
               Bachelor of Technology (B.Tech) – Electronics & Communication Engineering
             </h5>
