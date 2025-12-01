@@ -34,7 +34,7 @@ function Contact() {
           <div className="mb-3">
             <input
               type="text"
-              name="name"
+              name="from_name"
               className="form-control"
               placeholder="Your Name"
               required
@@ -44,7 +44,7 @@ function Contact() {
           <div className="mb-3">
             <input
               type="email"
-              name="email"
+              name="from_email"
               className="form-control"
               placeholder="Email"
               required
