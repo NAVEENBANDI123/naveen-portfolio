@@ -10,7 +10,7 @@ function Resume() {
           Download my resume to know more about my experience.
         </p>
         <a
-  href={`${import.meta.env.BASE_URL}resume.pdf`}
+  href={`${import.meta.env.BASE_URL}Bandi_Naveen_Java_SpringBoot_Backend_Developer_Resume.pdf`}
   className="btn btn-primary mt-3 pulse-btn"
   download
 >
