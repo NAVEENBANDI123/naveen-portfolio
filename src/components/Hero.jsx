@@ -18,7 +18,7 @@ function Hero() {
           <a href="#projects" className="btn btn-primary me-3">
             View Projects
           </a>
-          <a href="/resume.pdf" className="btn btn-outline-light">
+          <a href="/Bandi_Naveen_Java_SpringBoot_Backend_Developer_Resume.pdf" className="btn btn-outline-light">
             Download Resume
           </a>
         </div>
