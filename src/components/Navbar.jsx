@@ -4,7 +4,7 @@ function Navbar() {
       <div className="container">
           <a className="navbar-brand d-flex align-items-center" href="#home">
             <img
-              src="/favicon-32x32.png"
+              src="/favicon.png"
               alt="Naveen Bandi Logo"
               width="32"
               height="32"
