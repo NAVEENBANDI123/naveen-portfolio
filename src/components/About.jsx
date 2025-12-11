@@ -121,7 +121,7 @@ if (entry.isIntersecting) {
         </div>
 
         <p className="mt-4">
-          I am a <strong>Java / Spring Boot Developer</strong> with nearly
+          I am a <strong>Java & Spring Boot Developer</strong> with nearly
           <strong> 1 year of hands-on professional experience</strong> working on
           enterprise-level applications. My primary expertise lies in building
           reliable and scalable backend services.

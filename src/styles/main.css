@@ -824,4 +824,79 @@ footer {
 .form-control:-ms-input-placeholder {
   color: rgba(255, 255, 255, 0.6);
 }
+/* ===============================
+   MOBILE FIXES (IMPORTANT)
+================================ */
+
+@media (max-width: 768px) {
+
+  /* Fix hero text overflow */
+  .hero h1,
+  .hero-title {
+    font-size: clamp(1.8rem, 6vw, 2.4rem);
+    line-height: 1.2;
+    padding: 0 10px;
+  }
+
+  .hero p {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  /* Reduce padding for sections */
+  .section-padding {
+    padding: 50px 0;
+  }
+
+  /* Fix skill pill width overflow */
+  .skill-pill {
+    width: 100%;
+    justify-content: flex-start;
+    padding: 10px 12px;
+  }
+
+  /* Reduce icon size */
+  .skill-pill img {
+    width: 28px;
+    height: 28px;
+  }
+
+  /* Better grid spacing for skill boxes */
+  .skill-box {
+    padding: 18px;
+  }
+
+  /* Avoid horizontal scroll */
+  body,
+  html {
+    overflow-x: hidden;
+  }
+
+  /* Prevent project cards from overflowing */
+  .project-card {
+    margin: 0 10px;
+  }
+
+  /* Contact section fixes */
+  .contact-item {
+    flex-direction: row;
+    width: 100%;
+  }
+}
+
+/* Super small screens (≤480px) */
+@media (max-width: 480px) {
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .skill-pill {
+    font-size: 0.85rem;
+  }
+
+  .skill-modal {
+    max-width: 90%;
+  }
+}
 
