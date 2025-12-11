@@ -1,41 +1,20 @@
-// import { useEffect } from "react";
-
 function Navbar() {
-
-  useEffect(() => {
-    const navLinks = document.querySelectorAll(".nav-link");
-    const navbarCollapse = document.getElementById("portfolioNavbar");
-
-    navLinks.forEach((link) => {
-      link.addEventListener("click", () => {
-        // Close only on mobile/tablet
-        if (window.innerWidth < 992) {
-          const bsCollapse = new window.bootstrap.Collapse(navbarCollapse, {
-            toggle: false,
-          });
-          bsCollapse.hide();
-        }
-      });
-    });
-  }, []);
-
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm">
       <div className="container">
-
-        <a className="navbar-brand d-flex align-items-center" href="#home">
-          <img
-            src="/favicon.png"
-            alt="Naveen Bandi Logo"
-            width="32"
-            height="32"
-            className="me-2"
-          />
-        </a>
-
-        <a className="navbar-brand fw-bold" href="#home">
+          <a className="navbar-brand d-flex align-items-center" href="#home">
+            <img
+              src="/favicon.png"
+              alt="Naveen Bandi Logo"
+              width="32"
+              height="32"
+              className="me-2"
+            />
+          </a>
+        
+         <a className="navbar-brand fw-bold" href="#home">
           Naveen Bandi<span className="text-primary">.</span>
-        </a>
+        </a> 
 
         <button
           className="navbar-toggler"
@@ -48,24 +27,12 @@ function Navbar() {
 
         <div className="collapse navbar-collapse" id="portfolioNavbar">
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0 text-uppercase">
-            <li className="nav-item">
-              <a className="nav-link" href="#home">Home</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#about">About</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#skills">Skills</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#projects">Projects</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#experience">Experience</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#contact">Contact</a>
-            </li>
+            <li className="nav-item"><a className="nav-link" href="#home">Home</a></li>
+            <li className="nav-item"><a className="nav-link" href="#about">About</a></li>
+            <li className="nav-item"><a className="nav-link" href="#skills">Skills</a></li>
+            <li className="nav-item"><a className="nav-link" href="#projects">Projects</a></li>
+            <li className="nav-item"><a className="nav-link" href="#experience">Experience</a></li>
+            <li className="nav-item"><a className="nav-link" href="#contact">Contact</a></li>
             <li className="nav-item">
               <a className="btn btn-outline-primary btn-sm ms-lg-3" href="#resume">
                 Resume
@@ -73,7 +40,6 @@ function Navbar() {
             </li>
           </ul>
         </div>
-
       </div>
     </nav>
   );
