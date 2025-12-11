@@ -7,7 +7,7 @@ function Hero() {
         </h1>
 
         <p className="lead mt-3">
-          Java / Spring Boot Developer
+          Java & Spring Boot Developer
         </p>
 
         <p className="text-muted mt-2">

@@ -848,23 +848,19 @@ footer {
     padding: 50px 0;
   }
 
-  /* Fix skill pill width overflow */
+  /* Apply pill resizing only on very small screens */
+@media (max-width: 480px) {
   .skill-pill {
     width: 100%;
     justify-content: flex-start;
     padding: 10px 12px;
   }
 
-  /* Reduce icon size */
   .skill-pill img {
     width: 28px;
     height: 28px;
   }
-
-  /* Better grid spacing for skill boxes */
-  .skill-box {
-    padding: 18px;
-  }
+}
 
   /* Avoid horizontal scroll */
   body,
