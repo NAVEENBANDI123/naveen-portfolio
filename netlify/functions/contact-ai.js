@@ -44,7 +44,7 @@ export const handler = async (event, context) => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         service_id: "service_qfhyfua",
-        template_id: "template_contactus", // Your admin template ID
+        template_id: "template_i4ypccb", // Your admin template ID
         user_id: "fdXAq8JIVcWc7CcKP",
         template_params: {
           from_name: name,

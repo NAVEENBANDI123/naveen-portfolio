@@ -1,5 +1,4 @@
 import { useState } from "react";
-
 function Contact() {
   const [status, setStatus] = useState(null);
 
