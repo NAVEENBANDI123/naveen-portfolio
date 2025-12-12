@@ -1,29 +1,28 @@
 import { useState } from "react";
+import emailjs from "emailjs-com";
+
 function Contact() {
   const [status, setStatus] = useState(null);
 
-  const sendEmail = async (e) => {
+  const sendEmail = (e) => {
     e.preventDefault();
 
-    const formData = new FormData(e.target);
-
-    const data = {
-      name: formData.get("from_name"),
-      email: formData.get("from_email"),
-      message: formData.get("message"),
-    };
-
-    const res = await fetch("/.netlify/functions/contact-ai", {
-      method: "POST",
-      body: JSON.stringify(data),
-    });
-
-    if (res.ok) {
-      setStatus("SUCCESS");
-      e.target.reset();
-    } else {
-      setStatus("ERROR");
-    }
+    emailjs
+      .sendForm(
+        "service_qfhyfua",       // ✅ your Service ID
+        "template_i4ypccb",      // ✅ your Template ID
+        e.target,
+        "fdXAq8JIVcWc7CcKP"          // ✅ your Public Key
+      )
+      .then(
+        () => {
+          setStatus("SUCCESS");
+          e.target.reset();
+        },
+        () => {
+          setStatus("ERROR");
+        }
+      );
   };
 
   return (
@@ -68,11 +67,15 @@ function Contact() {
         </form>
 
         {status === "SUCCESS" && (
-          <p className="text-success mt-3">✅ Message sent successfully!</p>
+          <p className="text-success mt-3">
+            ✅ Message sent successfully!
+          </p>
         )}
 
         {status === "ERROR" && (
-          <p className="text-danger mt-3">❌ Something went wrong. Please try again.</p>
+          <p className="text-danger mt-3">
+            ❌ Something went wrong. Please try again.
+          </p>
         )}
 
         <div className="mt-5 d-flex flex-column flex-md-row gap-4 align-items-start">
