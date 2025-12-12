@@ -1,5 +1,4 @@
 import OpenAI from "openai";
-import fetch from "node-fetch";
 
 export const handler = async (event, context) => {
   try {
@@ -20,7 +19,7 @@ export const handler = async (event, context) => {
 
     const aiReply = completion.choices[0].message.content;
 
-    // Send via EmailJS
+    // Send Email using EmailJS
     await fetch("https://api.emailjs.com/api/v1.0/email/send", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -32,7 +31,7 @@ export const handler = async (event, context) => {
           user_name: name,
           user_email: email,
           user_message: message,
-          ai_reply: aiReply,
+          ai_reply: aiReply
         }
       })
     });
@@ -43,6 +42,7 @@ export const handler = async (event, context) => {
     };
 
   } catch (error) {
+    console.error("FUNCTION ERROR →", error.message);
     return {
       statusCode: 500,
       body: JSON.stringify({ error: error.message }),
