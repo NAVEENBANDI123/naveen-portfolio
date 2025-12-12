@@ -4,26 +4,29 @@ import emailjs from "emailjs-com";
 function Contact() {
   const [status, setStatus] = useState(null);
 
-  const sendEmail = (e) => {
-    e.preventDefault();
+  const sendEmail = async (e) => {
+  e.preventDefault();
 
-    emailjs
-      .sendForm(
-        "service_qfhyfua",       // ✅ your Service ID
-        "template_i4ypccb",      // ✅ your Template ID
-        e.target,
-        "fdXAq8JIVcWc7CcKP"          // ✅ your Public Key
-      )
-      .then(
-        () => {
-          setStatus("SUCCESS");
-          e.target.reset();
-        },
-        () => {
-          setStatus("ERROR");
-        }
-      );
+  const formData = new FormData(e.target);
+
+  const data = {
+    name: formData.get("from_name"),
+    email: formData.get("from_email"),
+    message: formData.get("message"),
   };
+
+  const res = await fetch("/.netlify/functions/contact-ai", {
+    method: "POST",
+    body: JSON.stringify(data),
+  });
+
+  if (res.ok) {
+    setStatus("SUCCESS");
+    e.target.reset();
+  } else {
+    setStatus("ERROR");
+  }
+};
 
   return (
     <section id="contact" className="section-padding">
