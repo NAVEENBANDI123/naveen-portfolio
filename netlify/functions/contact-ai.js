@@ -2,7 +2,7 @@ export const handler = async (event, context) => {
   try {
     const { name, email, message } = JSON.parse(event.body);
 
-    // Call Groq API (Free AI Model)
+    // FREE GROQ API CALL
     const aiResponse = await fetch("https://api.groq.com/openai/v1/chat/completions", {
       method: "POST",
       headers: {
@@ -19,9 +19,9 @@ export const handler = async (event, context) => {
     });
 
     const aiData = await aiResponse.json();
-    const aiReply = aiData.choices?.[0]?.message?.content || "Sorry, I could not generate a reply.";
+    const aiReply = aiData.choices?.[0]?.message?.content || "Sorry, I couldn't generate a reply.";
 
-    // Send Email with EmailJS
+    // SEND EMAIL USING EMAILJS
     await fetch("https://api.emailjs.com/api/v1.0/email/send", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -33,21 +33,21 @@ export const handler = async (event, context) => {
           user_name: name,
           user_email: email,
           user_message: message,
-          ai_reply: aiReply,
+          ai_reply: aiReply
         }
       })
     });
 
     return {
       statusCode: 200,
-      body: JSON.stringify({ success: true, aiReply }),
+      body: JSON.stringify({ success: true, aiReply })
     };
 
   } catch (error) {
     console.error("FUNCTION ERROR →", error);
     return {
       statusCode: 500,
-      body: JSON.stringify({ error: error.message }),
+      body: JSON.stringify({ error: error.message })
     };
   }
 };
